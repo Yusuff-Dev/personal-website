@@ -22,7 +22,7 @@ export default function Model() {
 //   });
 
   return (
-    <group scale={viewport.width / 3.75}>
+    <group scale={viewport.width / 2}>
       {/* <Text
         position={[0, 0, -1]}
         fontSize={0.5}

@@ -1,10 +1,10 @@
 "use client";
-// import dynamic from "next/dynamic";
-// const Scene = dynamic(() => import("@/components/Scene"), {
-//   ssr: false,
-// });
+import dynamic from "next/dynamic";
+const Scene = dynamic(() => import("@/components/Scene"), {
+  ssr: false,
+});
 
-// import Image from "next/image";
+import Image from "next/image";
 // import TextAnimation from "../components/textAnimation";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -46,21 +46,32 @@ export default function Home() {
 
   return (
     <main>
-      <header className="h-screen relative overflow-hidden">
+      <header className="grid grid-cols-1 sm:grid-cols-[1fr,_2fr] gap-5 container grid-rows-[400px,_200px]">
+        <div className=" rounded-2xl p-5 border">
+          <h1>Abdurasulov Muxriddin</h1>
+        </div>
+        <div className=" rounded-2xl p-5 row-span-2 border">
+          <Scene />
+        </div>
+        <div className="rounded-2xl p-5 border">
+          asfsdfasdf
+        </div>
+      </header>
+      {/* <header className="h-screen relative overflow-hidden">
         <div className={`sliderContainer`}>
           <div ref={slider} className={`slider`}>
-            <p ref={firstText} className="uppercase">
+            <p ref={firstText} className="capitalize">
               Front-end Developer —
             </p>
-            <p ref={secondText} className="uppercase">
+            <p ref={secondText} className="capitalize">
               Front-end Developer —
             </p>
           </div>
-        </div>
-        {/* <div>
+        </div> 
+         <div>
           <Scene />
-        </div> */}
-      </header>
+        </div>
+      </header> */}
     </main>
   );
 }
