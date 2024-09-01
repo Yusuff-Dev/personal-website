@@ -17,10 +17,11 @@ module.exports = {
       center: true,
     },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        'dark-gray': '#232426',
+        'light-gray': "#343537",
+        'E1': "#E1E1E1",
+        'CCC': "#CCCCCC"
       },
     },
   },
