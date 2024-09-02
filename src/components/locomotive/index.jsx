@@ -34,14 +34,14 @@ function index({ children }) {
         gsap.set(firstText.current, { xPercent: xPercent });
         gsap.set(secondText.current, { xPercent: xPercent });
         requestAnimationFrame(animate);
-        xPercent += 0.02 * direction;
+        xPercent += 0.03 * direction;
     };
     return (
         <div className="h-screen relative overflow-hidden">
             <div className={`absolute top-2/3`}>
                 <div ref={slider} className={`relative whitespace-nowrap`}>
-                    <p className="locomotive text-zinc-300" ref={firstText}>{children}</p>
-                    <p className="locomotive text-zinc-300" ref={secondText}>{children}</p>
+                    <p className="locomotive text-gray-700 !font-medium" ref={firstText}>{children}</p>
+                    <p className="locomotive text-gray-700 !font-medium" ref={secondText}>{children}</p>
                 </div>
             </div>
         </div>

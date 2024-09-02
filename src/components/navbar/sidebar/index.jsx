@@ -22,7 +22,7 @@ const navItems = [
 export default function index() {
   return (
     <div className={`flex justify-end overflow-hidden fixed top-0 right-0 z-40 h-screen w-full`}>
-      <motion.div variants={menuSlide} initial="initial" animate="enter" exit="exit" className={`bg-CCC h-full w-full sm:w-1/2 lg:w-1/3`}>
+      <motion.div variants={menuSlide} initial="initial" animate="enter" exit="exit" className={`bg-gray-900 h-full w-full sm:w-1/2 lg:w-1/3`}>
         <div className='flex flex-col gap-8 w-full h-full justify-center items-center sm:items-start p-10'>
           {
             navItems.map((data, index) => {

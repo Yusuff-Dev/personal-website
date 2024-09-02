@@ -12,7 +12,7 @@ export default function Index({ data, isActive }) {
   return (
     <motion.div custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
       <motion.div variants={scale} animate={isActive ? "open" : "closed"}></motion.div>
-      <Link href={href} className={`block text-dark-gray text-7xl px-5 ${pathname === href && 'linkActive'}`}>
+      <Link href={href} className={`block text-gray-200 text-7xl px-5 ${pathname === href && 'linkActive'}`}>
       <TextAnimation>{title}</TextAnimation>
       </Link>
     </motion.div>
