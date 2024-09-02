@@ -1,8 +1,11 @@
-import React from 'react'
+import Transition from '../../components/transition'
 
 function page() {
   return (
-    <div className='container text-3xl'>About page</div>
+    <div>
+      <div className='container text-3xl'>About page</div>
+      <Transition/>
+    </div>
   )
 }
 

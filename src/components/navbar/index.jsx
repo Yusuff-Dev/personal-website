@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <nav className='sticky top-0 z-50 py-6'>
+      <nav className='fixed top-0 right-0 z-50 py-10'>
         <div className="container flex items-center justify-end">
           <div onClick={handleOpen} className="rounded-full bg-[#343537] px-3 flex items-center h-12 relative select-none cursor-pointer">
             <p className={`text-white uppercase font-inter font-light text-[13px] ${isActive ? 'opacity-0' : ''} duration-500`}>menu</p>

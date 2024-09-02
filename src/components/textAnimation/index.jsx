@@ -1,7 +1,7 @@
 'use client'
 function index({ children }) {
     return (
-        <div className="relative overflow-hidden group">
+        <div className="relative overflow-hidden group select-none">
             <p className={`group-hover:-translate-y-full duration-300`}>{children}</p>
             <p className="absolute top-full w-[100%] group-hover:-translate-y-full duration-300 opacity-50">{children}</p>
         </div>
