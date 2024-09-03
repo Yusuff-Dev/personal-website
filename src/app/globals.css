@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .svgCurve {
   position: absolute;
   top: 0;
@@ -27,10 +26,6 @@
   top: 50%;
   transform: translate(-50%);
   left: 0;
-}
-
-.linkActive:hover::before {
-  background-color: rgba(209, 213, 219, 0.5);
 }
 
 .locomotive {

@@ -5,7 +5,7 @@ function index() {
     const loader = useRef(null);
     const path = useRef(null);
     const initialCurve = 300;
-    const duration = 600;
+    const duration = 800;
     let start;
 
     useEffect(() => {

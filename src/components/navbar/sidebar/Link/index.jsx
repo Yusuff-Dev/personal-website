@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { scale, slide } from '../../anime';
 import { usePathname } from 'next/navigation';
-import TextAnimation from '../../../textAnimation'
+import Magnetic from '../../../magnetic'
 
 export default function Index({ data, isActive }) {
   const pathname = usePathname()
@@ -12,9 +12,11 @@ export default function Index({ data, isActive }) {
   return (
     <motion.div custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
       <motion.div variants={scale} animate={isActive ? "open" : "closed"}></motion.div>
-      <Link href={href} className={`block text-gray-200 text-7xl px-5 ${pathname === href && 'linkActive'}`}>
-      <TextAnimation>{title}</TextAnimation>
-      </Link>
+      <Magnetic>
+        <Link href={href} className={`block text-gray-200 text-7xl px-5 ${pathname === href && 'linkActive'}`}>
+          {title}
+        </Link>
+      </Magnetic>
     </motion.div>
   )
 }
