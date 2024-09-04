@@ -38,10 +38,10 @@ function index({ children }) {
     };
     return (
         <div className="relative overflow-hidden h-screen mx-auto">
-            <div className={`absolute top-1/3 md:top-1/2 -translate-y-1/2 leading-[0.7]`}>
+            <div className={`absolute top-1/3 md:top-1/2 -translate-y-1/2`}>
                 <div ref={slider} className={`relative whitespace-nowrap`}>
                     <p className="locomotive text-white-smoke uppercase mx-3" ref={firstText}>{children}</p>
-                    <p className="locomotive text-white-smoke uppercase" ref={secondText}>{children}</p>
+                    <p className="locomotive text-white-smoke uppercase mx-3" ref={secondText}>{children}</p>
                 </div>
             </div>
         </div>
