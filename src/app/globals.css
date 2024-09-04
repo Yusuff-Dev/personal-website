@@ -2,14 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-.svgCurve {
-  position: absolute;
-  top: 0;
-  left: -99px;
-  width: 100px;
-  height: 100%;
-  fill: #111827;
-  stroke: none;
+:root {
+  --bg-black: #232426;
+  --grey: #ccc;
+  --white-smoke: #e1e1e1;
+  --alternate-color: #6b6e6f;
+}
+
+@font-face {
+  font-family: geist;
+  src: url('../../public/fonts/Geist/variable-ttf/GeistVF.ttf');
+}
+
+@font-face {
+  font-family: humane;
+  src: url('../../public/fonts/HUMANE/Humane-VF.ttf');
+}
+
+html,
+body{
+  background-color: var(--bg-black);
+  font-family: geist, sans-serif;
+  color: var(--grey);
 }
 
 .linkActive {
@@ -21,7 +35,6 @@
   position: absolute;
   width: 1rem;
   height: 1rem;
-  background-color: #d1d5db;
   border-radius: 50%;
   top: 50%;
   transform: translate(-50%);
@@ -30,33 +43,13 @@
 
 .locomotive {
   position: relative;
-  font-size: 200px;
-  font-weight: 400;
-  margin-right: 50px;
-  letter-spacing: -12px;
+  font-size: calc(20vw + 8rem);
   user-select: none;
-  text-transform: capitalize;
+  font-family: humane, sans-serif;
 }
 
 .locomotive:nth-of-type(2) {
   position: absolute;
   left: 100%;
   top: 0;
-}
-
-section {
-  position: relative;
-}
-
-section::before {
-  position: absolute;
-  content: attr(data-text);
-  top: 15px;
-  right: 0;
-  font-size: 37.5rem;
-  z-index: -1;
-  line-height: 80%;
-  font-weight: 400;
-  font-family: Roboto, sans-serif;
-  opacity: 0.07;
 }

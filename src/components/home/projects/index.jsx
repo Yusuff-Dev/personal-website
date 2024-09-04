@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import Card from '../../card';
 import { useScroll } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
+import Magnetic from '../../magnetic'
+import Link from 'next/link';
 
 function index() {
 
@@ -36,14 +38,6 @@ function index() {
             link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
             color: "#C2491D"
         },
-
-        {
-            title: "Zissou",
-            description: "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-            src: 'tree.jpg',
-            link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-            color: "#C248af"
-        },
     ];
 
 
@@ -54,13 +48,15 @@ function index() {
             requestAnimationFrame(raf)
         }
         requestAnimationFrame(raf)
-    })
+    });
 
     return (
         <section id='projects' data-text="02" className='py-[100px]' ref={container}>
-            <div className='container'>
-                <h2 className='text-zinc-500 text-7xl font-medium text-center uppercase'>Recent works</h2>
-                <div  className={`main`}>
+            <div className='container flex flex-col items-center gap-5 md:gap-10'>
+                <Magnetic>
+                <p className='text-grey text-sm uppercase mr-auto'>Recent works</p>
+                </Magnetic>
+                <div>
                     {
                         projects.map((project, i) => {
                             let targetScale = 1 - ((projects.length - i) * 0.05);
@@ -68,8 +64,12 @@ function index() {
                         })
                     }
                 </div>
+                <Magnetic>
+                    <Link href="/works" scroll={false} className='rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
+                        all projects
+                    </Link>
+                </Magnetic>
             </div>
-            <p>all projects</p>
         </section>
     )
 }

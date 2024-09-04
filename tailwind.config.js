@@ -18,10 +18,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'dark-gray': '#232426',
-        'light-gray': "#343537",
-        'E1': "#E1E1E1",
-        'CCC': "#CCCCCC"
+        'bg-black': '#232426',
+        'grey': "#ccc",
+        'dark-grey': "#343537",
+        'dark-smoke': "#CCCCCC",
+        'white-smoke': "#E1E1E1",
       },
     },
   },

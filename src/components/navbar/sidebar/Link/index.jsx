@@ -13,7 +13,7 @@ export default function Index({ data, isActive }) {
     <motion.div custom={index} variants={slide} initial="initial" animate="enter" exit="exit">
       <motion.div variants={scale} animate={isActive ? "open" : "closed"}></motion.div>
       <Magnetic>
-        <Link href={href} className={`block text-gray-200 text-7xl px-5 ${pathname === href && 'linkActive'}`}>
+        <Link href={href} className={`block text-bg-black text-7xl px-5 before:bg-bg-black ${pathname === href && 'linkActive'}`}>
           {title}
         </Link>
       </Magnetic>
