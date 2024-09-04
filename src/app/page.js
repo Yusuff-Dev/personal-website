@@ -18,10 +18,10 @@ export default function Home() {
 
   return (
     <main>
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <Transition /> */}
+      <Transition />
       <Hero />
       <Projects />
     </main>
