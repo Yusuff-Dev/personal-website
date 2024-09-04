@@ -23,6 +23,13 @@ module.exports = {
         'dark-grey': "#343537",
         'dark-smoke': "#CCCCCC",
         'white-smoke': "#E1E1E1",
+        'card-bg': '#404142',
+        'alternate': '#6b6e6f',
+      },
+
+      fontFamily: {
+        'humane': ['humane', 'sans-serif'],
+        'geist': ['geist', 'sans-serif']
       },
     },
   },

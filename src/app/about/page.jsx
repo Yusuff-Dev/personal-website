@@ -1,11 +1,16 @@
 import Transition from '../../components/transition'
+import Hero from './hero'
+import Skills from './skills'
+import Timeline from './timeline'
 
 function page() {
   return (
-    <div>
-      <div className='container text-3xl'>About page</div>
-      <Transition/>
-    </div>
+    <>
+      <Transition />
+      <Hero/>
+      <Skills/>
+      <Timeline/>
+    </>
   )
 }
 

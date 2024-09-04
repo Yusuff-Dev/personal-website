@@ -51,7 +51,7 @@ function index() {
         );
     };
     return (
-        <div ref={loader} className={`h-[calc(100vh+200px)] absolute top-0 w-full`}>
+        <div ref={loader} className={`h-[calc(100vh+200px)] absolute top-0 w-full z-50`}>
             <svg className="w-full h-full">
                 <path className="stroke-black stroke-[1px]" ref={path}></path>
             </svg>

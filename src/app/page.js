@@ -2,10 +2,9 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "../components/preloader";
-import Transition from '../components/transition'
+import Transition from "../components/transition";
 import Hero from "../components/home/hero";
-import Projects from '../components/home/projects'
-
+import Projects from "../components/home/projects";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,10 +18,10 @@ export default function Home() {
 
   return (
     <main>
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <Transition/>
+      <Transition /> */}
       <Hero />
       <Projects />
     </main>
