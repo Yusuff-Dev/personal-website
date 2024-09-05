@@ -7,7 +7,6 @@ import Link from 'next/link';
 const Card = ({ i, len, title, name, data, src, progress, range, targetScale }) => {
 
     const container = useRef(null);
-    
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ['start end', 'start start']

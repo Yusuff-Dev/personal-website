@@ -1,18 +1,19 @@
 'use client'
 import { useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 function index() {
     const loader = useRef(null);
     const path = useRef(null);
     const initialCurve = 300;
-    const duration = 800;
+    const duration = 500;
     let start;
 
     useEffect(() => {
         setPath(initialCurve);
         setTimeout(() => {
             requestAnimationFrame(animate);
-        },);
+        }, 500);
     }, []);
 
     const animate = (timestamp) => {
@@ -50,12 +51,17 @@ function index() {
       L0 0`
         );
     };
+
+    const pathname = usePathname();
+    
     return (
-        <div ref={loader} className={`h-[calc(100vh+200px)] absolute top-0 w-full z-50`}>
-            <svg className="w-full h-full">
-                <path className="stroke-black stroke-[1px]" ref={path}></path>
-            </svg>
-        </div>
+        <>
+            <div ref={loader} className={`h-[calc(100vh+200px)] absolute top-0 w-full z-50`}>
+                <svg className="w-full h-full">
+                    <path className="stroke-black stroke-[1px]" ref={path}></path>
+                </svg>
+            </div>
+        </>
     )
 }
 

@@ -4,6 +4,7 @@ import { useScroll } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
 import Magnetic from '../../magnetic'
 import Link from 'next/link';
+import { projects } from '@/utils/data'; 
 
 function index() {
 
@@ -13,26 +14,6 @@ function index() {
         target: container,
         offset: ['start start', 'end end']
     });
-
-    const projects = [
-        {
-            name: "Aperture",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
-            src: 'aperture.webp',
-            figma: '',
-            data: '2022',
-            title: 'custom website',
-        },
-        {
-            name: "Aperture",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
-            src: 'aperture.webp',
-            figma: '',
-            data: '2022',
-            title: 'custom website',
-        },
-    ];
-
 
     useEffect(() => {
         const lenis = new Lenis()
@@ -47,7 +28,7 @@ function index() {
         <section ref={container} id='projects' className='py-[100px] relative'>
             <div className='container flex flex-col items-center gap-5 md:gap-10 relative'>
                 <Magnetic>
-                    <p className='text-grey text-sm uppercase mr-auto'>Recent works</p>
+                    <p className='text-grey text-sm uppercase mr-auto'>selected works</p>
                 </Magnetic>
                 <div className='w-full relative'>
                     {

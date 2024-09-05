@@ -9,14 +9,13 @@ const navItems = [
     href: "/",
   },
   {
+    title: "Work",
+    href: "/works",
+  },
+  {
     title: "About",
     href: "/about",
   },
-  {
-    title: "Works",
-    href: "/works",
-  },
-
 ]
 
 export default function index() {
