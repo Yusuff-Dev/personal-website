@@ -15,7 +15,7 @@ function index() {
                     <Projects data={projects} h={'90vh'}/>
                 </div>
                 <Magnetic>
-                    <Link href="/works" scroll={false} className='rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
+                    <Link href="/works" className='rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
                         all projects
                     </Link>
                 </Magnetic>
