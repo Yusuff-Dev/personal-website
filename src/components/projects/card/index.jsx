@@ -2,7 +2,7 @@
 import { useTransform, motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 
-const Card = ({ i, progress, range, targetScale, children }) => {
+const Card = ({ i, progress, range, targetScale, children, h }) => {
 
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -16,8 +16,8 @@ const Card = ({ i, progress, range, targetScale, children }) => {
     return (
         <div ref={container} className={`h-screen sticky top-0`}>
             <motion.div
-                style={{ scale, rotate, top: `calc(5vh + ${i * 25}px)` }}
-                className={`w-full rounded-[25px] origin-top`}
+                style={{ backgroundImage: `url(/img/${'aperture.webp'})`, scale, rotate, top: `calc(5vh + ${i * 25}px)` }}
+                className={`h-[${h}] w-full rounded-[25px] p-4 md:p-10 origin-top relative bg-no-repeat bg-center bg-cover`}
             >
                 {children}
             </motion.div>

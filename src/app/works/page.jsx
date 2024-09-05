@@ -3,7 +3,7 @@ import Trasntion from '../../components/transition'
 import Locomotive from '../../components/locomotive'
 import Magnetic from '../../components/magnetic'
 import Projects from '../../components/projects'
-import Link from 'next/link'
+import { projects } from '@/utils/data'
 
 function page({ len }) {
 
@@ -36,11 +36,7 @@ function page({ len }) {
             </div>
           </div>
           <div className='mt-28'>
-            <Projects data={[1, 2, 3]}>
-              <div className='flex items-center justify-between flex-wrap bg-blue-50 h-screen w-full'>
-
-              </div>
-            </Projects>
+            <Projects data={projects} h={'90vh'} />
           </div>
         </div>
       </section>
