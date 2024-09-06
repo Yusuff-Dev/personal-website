@@ -3,6 +3,7 @@ import { useScroll } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
 import Card from './card';
 import Magnetic from '../../components/magnetic'
+import Link from 'next/link';
 
 function index({ data, h }) {
 
@@ -29,34 +30,38 @@ function index({ data, h }) {
             {
                 data?.map((item, i) => {
                     let targetScale = 1 - ((data.length - i) * 0.05);
-                    return <Card key={`p_${i}`} i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} h={h}>
-                        <div className='flex items-center justify-between flex-wrap'>
-                            <div className='flex items-center'>
-                                <Magnetic>
-                                    <button className='px-7 py-2 text-dark-grey uppercase text-5xl font-humane'>
-                                        {`(0${i + 1} / 0${data.length})`}
-                                    </button>
-                                </Magnetic>
-                                <Magnetic>
-                                    <button className='rounded-full bg-grey px-7 py-2 text-dark-grey uppercase text-sm'>
-                                        {item.name}
-                                    </button>
-                                </Magnetic>
-                            </div>
-                            <div className='flex items-center gap-3'>
-                                <Magnetic>
-                                    <button className='rounded-full bg-grey px-7 py-2 text-dark-grey uppercase text-sm'>
-                                        {item.title}
-                                    </button>
-                                </Magnetic>
-                                <Magnetic>
-                                    <button className='rounded-full bg-grey px-7 py-2 text-dark-grey uppercase text-sm'>
-                                        {item.date}
-                                    </button>
-                                </Magnetic>
-                            </div>
-                        </div>
-                    </Card>
+                    return (
+                        <Link key={`p_${i}`} href={`/works/${item.name}`}>
+                            <Card  i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} h={h} src={item.src}>
+                                <div className='flex items-center justify-between flex-wrap'>
+                                    <div className='flex items-center'>
+                                        <Magnetic>
+                                            <button className='px-7 py-2 text-dark-grey uppercase text-5xl font-humane'>
+                                                {`(0${i + 1} / 0${data.length})`}
+                                            </button>
+                                        </Magnetic>
+                                        <Magnetic>
+                                            <button className='rounded-full bg-grey px-7 py-2 text-dark-grey uppercase text-sm'>
+                                                {item.name}
+                                            </button>
+                                        </Magnetic>
+                                    </div>
+                                    <div className='flex items-center gap-3'>
+                                        <Magnetic>
+                                            <button className='rounded-full bg-grey px-7 py-2 text-dark-grey uppercase text-sm'>
+                                                {item.title}
+                                            </button>
+                                        </Magnetic>
+                                        <Magnetic>
+                                            <button className='rounded-full bg-grey px-7 py-2 text-dark-grey uppercase text-sm'>
+                                                {item.date}
+                                            </button>
+                                        </Magnetic>
+                                    </div>
+                                </div>
+                            </Card>
+                        </Link>
+                    )
                 })
             }
         </div>
