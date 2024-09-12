@@ -1,5 +1,6 @@
 import Locomotive from '../../../components/locomotive'
 import Image from 'next/image'
+// import Heading from '../../../components/heading'
 
 function index() {
   return (

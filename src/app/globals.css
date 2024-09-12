@@ -55,5 +55,5 @@ body{
 }
 
 .heading{
-  font-size: clamp(6rem, 20vw, 15rem);
+  font-size: clamp(10rem, 20vw, 15rem);
 }

@@ -13,7 +13,7 @@ function index() {
         setPath(initialCurve);
         setTimeout(() => {
             requestAnimationFrame(animate);
-        }, 500);
+        });
     }, []);
 
     const animate = (timestamp) => {

@@ -5,14 +5,17 @@ import Card from './card';
 import Magnetic from '../../components/magnetic'
 import Link from 'next/link';
 
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '@/config/firebase';
+
 function index({ data, h }) {
 
     const container = useRef(null);
-
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ['start start', 'end end']
     });
+    
 
     useEffect(() => {
         const lenis = new Lenis()
@@ -20,8 +23,8 @@ function index({ data, h }) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
-        requestAnimationFrame(raf)
-    });
+        requestAnimationFrame(raf);
+    }, []);
 
     if (!data) return <p className='text-2xl text-center uppercase'>coming soon...</p>
 
@@ -32,7 +35,7 @@ function index({ data, h }) {
                     let targetScale = 1 - ((data.length - i) * 0.05);
                     return (
                         <Link key={`p_${i}`} href={`/works/${item.name}`}>
-                            <Card  i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} h={h} src={item.src}>
+                            <Card i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} h={h} src={item.src}>
                                 <div className='flex items-center justify-between flex-wrap'>
                                     <div className='flex items-center'>
                                         <Magnetic>

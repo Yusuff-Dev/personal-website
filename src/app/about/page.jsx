@@ -1,15 +1,16 @@
+'use client'
 import Transition from '../../components/transition'
-import Hero from './hero'
 import Skills from './skills'
 import Timeline from './timeline'
+import Heading from '../../components/heading'
 
 function page() {
   return (
     <>
-      <Transition />
-      <Hero/>
-      <Skills/>
-      <Timeline/>
+      {/* <Transition /> */}
+      <Heading>About me</Heading>
+      <Skills />
+      <Timeline />
     </>
   )
 }

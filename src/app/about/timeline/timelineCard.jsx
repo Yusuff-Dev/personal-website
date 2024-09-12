@@ -2,7 +2,6 @@
 import { useTransform, motion, useScroll } from 'framer-motion';
 import { useRef } from 'react';
 import Magnetic from '../../../components/magnetic'
-import Link from 'next/link';
 
 const Card = ({ i, progress, range, targetScale }) => {
 

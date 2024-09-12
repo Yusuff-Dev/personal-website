@@ -3,6 +3,7 @@ import Trasntion from '../../components/transition'
 import Locomotive from '../../components/locomotive'
 import Magnetic from '../../components/magnetic'
 import Projects from '../../components/projects'
+import Heading from '../../components/heading'
 import { projects } from '@/utils/data'
 
 function page({ len }) {
@@ -10,26 +11,23 @@ function page({ len }) {
   return (
     <>
       {/* <Trasntion/> */}
-      <section id="work">
-        <Locomotive dur={0.02}>work work work work work</Locomotive>
-      </section>
-
+      <Heading>Work</Heading>
       <section>
         <div className="container">
           <div className='text-3xl capitalize'>
-            <div className='flex items-center gap-2 md:gap-4'>
+            <div className='flex items-center gap-2 md:gap-4 flex-wrap'>
               <Magnetic>
-                <button className='rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
+                <button className='grow sm:grow-0 rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
                   all
                 </button>
               </Magnetic>
               <Magnetic>
-                <button className='rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
+                <button className='grow sm:grow-0 rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
                   design
                 </button>
               </Magnetic>
               <Magnetic>
-                <button className='rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
+                <button className='grow sm:grow-0 rounded-full border border-white-smoke px-7 py-4 text-white-smoke uppercase text-sm'>
                   development - {len | 0}
                 </button>
               </Magnetic>
