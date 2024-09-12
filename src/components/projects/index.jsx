@@ -5,10 +5,8 @@ import Card from './card';
 import Magnetic from '../../components/magnetic'
 import Link from 'next/link';
 
-import { collection, getDocs } from "firebase/firestore";
-import { db } from '@/config/firebase';
 
-function index({ data, h }) {
+function index({ data }) {
 
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -35,7 +33,7 @@ function index({ data, h }) {
                     let targetScale = 1 - ((data.length - i) * 0.05);
                     return (
                         <Link key={`p_${i}`} href={`/works/${item.name}`}>
-                            <Card i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} h={h} src={item.src}>
+                            <Card i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} src={item.img_url}>
                                 <div className='flex items-center justify-between flex-wrap'>
                                     <div className='flex items-center'>
                                         <Magnetic>
@@ -52,7 +50,7 @@ function index({ data, h }) {
                                     <div className='flex items-center gap-3'>
                                         <Magnetic>
                                             <button className='rounded-full bg-grey px-7 py-2 text-dark-grey uppercase text-sm'>
-                                                {item.title}
+                                                {item.type}
                                             </button>
                                         </Magnetic>
                                         <Magnetic>

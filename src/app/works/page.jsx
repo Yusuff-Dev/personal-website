@@ -4,14 +4,30 @@ import Locomotive from '../../components/locomotive'
 import Magnetic from '../../components/magnetic'
 import Projects from '../../components/projects'
 import Heading from '../../components/heading'
-import { projects } from '@/utils/data'
+import { supabase } from '@/config/supabase';
+import { useEffect, useState } from 'react'
 
 function page({ len }) {
+  const [data, setData] = useState([]);
+
+    useEffect(()=>{
+        const getProjects = async ()=>{
+            const {data, error} = await supabase.from('projects').select('*');
+            if(error){
+                console.log(error.message);
+                return;
+            }
+
+            if(data) setData(data);
+        }
+
+        getProjects();
+    }, []);
 
   return (
     <>
       {/* <Trasntion/> */}
-      <Heading>Work</Heading>
+      <Heading>Works</Heading>
       <section>
         <div className="container">
           <div className='text-3xl capitalize'>
@@ -34,7 +50,7 @@ function page({ len }) {
             </div>
           </div>
           <div className='mt-28'>
-            <Projects data={projects} h={'90vh'} />
+            <Projects data={data} />
           </div>
         </div>
       </section>

@@ -1,28 +1,42 @@
 "use client";
-import { useState } from "react";
-import { projects } from "@/utils/data";
 import Link from "next/link";
 import Magnetic from "../../../components/magnetic";
-import Heading from '../../../components/heading'
+import Heading from "../../../components/heading";
+import { useEffect, useState } from "react";
+import { supabase } from "@/config/supabase";
 
 function page({ params }) {
-  const [data, setData] = useState(projects);
+  const [data, setData] = useState([]);
 
-  const filteredItem = data.filter((project) => project.name === params.work);
-  
+  useEffect(() => {
+    const getProjects = async () => {
+      const { data, error } = await supabase
+        .from("projects")
+        .select()
+        .eq("name", params.work);
+      if (error) {
+        console.log(error.message);
+      } else if (data) {
+        setData(data[0]);
+      }
+    };
+
+    getProjects();
+  }, []);
+
   return (
     <>
       <section>
         <div className="container">
-          <Heading>{filteredItem[0].name}</Heading>
-          <div className="flex items-center justify-between text-alternate uppercase my-10 flex-wrap">
+          <Heading>{params.work}</Heading>
+          <p className='max-w-sm text-center uppercase mx-auto'>{data?.desc}</p>
+
+          <div className="flex items-center justify-between text-alternate uppercase my-20 flex-wrap">
             <div className="flex flex-col gap-5">
               <p className="flex items-center gap-1">
                 type:{" "}
                 <Magnetic>
-                  <span className="block text-white-smoke">
-                    {filteredItem[0].type || "template"}
-                  </span>
+                  <span className="block text-white-smoke">{data?.type}</span>
                 </Magnetic>
               </p>
               <p className="flex items-center gap-1">
@@ -30,7 +44,7 @@ function page({ params }) {
                 <Magnetic>
                   <Link
                     target="blanc"
-                    href={"https://www.figma.com/design/vCJHFYy1TYhMQ0QCw0uzdp/Aperture?node-id=0-1&node-type=CANVAS&t=WEbWCLvs3yqFBUmN-0"}
+                    href={`${data?.figma}`}
                     className="block border-b border-alternate text-white-smoke"
                   >
                     view design
@@ -42,17 +56,16 @@ function page({ params }) {
               <p className="flex items-center gap-1">
                 year:{" "}
                 <Magnetic>
-                  <span className="block text-white-smoke">
-                    {filteredItem[0].date}
-                  </span>
+                  <span className="block text-white-smoke">{data?.date}</span>
                 </Magnetic>
               </p>
+
               <p className="flex items-center gap-1">
                 Website:{" "}
                 <Magnetic>
                   <Link
                     target="blanc"
-                    href={"https://aperturree.netlify.app/"}
+                    href={`${data?.url}`}
                     className="block border-b border-alternate text-white-smoke"
                   >
                     view live
@@ -62,11 +75,12 @@ function page({ params }) {
             </div>
           </div>
 
-          <div className="border">
+          <div className="">
             <Heading>next work</Heading>
             <div className="flex justify-center">
               <Magnetic>
-                <Link href={""}
+                <Link
+                  href={""}
                   className="block border border-white-smoke text-white-smoke rounded-full uppercase px-7 py-4"
                 >
                   {}
