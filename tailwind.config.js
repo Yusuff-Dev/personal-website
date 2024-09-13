@@ -14,22 +14,21 @@ module.exports = {
         xl: "5rem",
         "2xl": "6rem",
       },
-      center: true,
+      center: "true",
     },
     extend: {
       colors: {
-        'bg-black': '#232426',
-        'grey': "#ccc",
-        'dark-grey': "#343537",
-        'dark-smoke': "#CCCCCC",
-        'white-smoke': "#E1E1E1",
-        'card-bg': '#404142',
-        'alternate': '#6b6e6f',
+        "bg-black": "#232426",
+        grey: "#ccc",
+        "dark-grey": "#343537",
+        "dark-smoke": "#CCCCCC",
+        "white-smoke": "#E1E1E1",
+        "card-bg": "#404142",
+        alternate: "#6b6e6f",
       },
-
       fontFamily: {
-        'humane': ['humane', 'sans-serif'],
-        'geist': ['geist', 'sans-serif']
+        humane: ["humane", "sans-serif"],
+        geist: ["geist", "sans-serif"],
       },
     },
   },
