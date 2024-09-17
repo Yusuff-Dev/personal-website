@@ -16,7 +16,9 @@ const Card = ({ i, progress, range, targetScale, children, src }) => {
     return (
         <div ref={container} className={`h-screen sticky top-0`}>
             <motion.div
-                style={{ backgroundImage: `url(${src})`, scale, rotate, top: `calc(5vh + ${i * 25}px)` }}
+                style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(${src})`, scale, rotate, top: `calc(5vh + ${i * 25}px)`
+                }}
                 className={`h-full rounded-[25px] p-4 md:p-10 origin-top relative bg-no-repeat bg-center bg-cover`}
             >
                 {children}

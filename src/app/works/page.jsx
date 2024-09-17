@@ -1,28 +1,25 @@
 'use client'
 import Trasntion from '../../components/transition'
-import Locomotive from '../../components/locomotive'
 import Magnetic from '../../components/magnetic'
 import Projects from '../../components/projects'
 import Heading from '../../components/heading'
 import { supabase } from '@/config/supabase';
 import { useEffect, useState } from 'react'
 
-function page({ len }) {
+export default function page({ len }) {
   const [data, setData] = useState([]);
 
-    useEffect(()=>{
-        const getProjects = async ()=>{
-            const {data, error} = await supabase.from('projects').select('*');
-            if(error){
-                console.log(error.message);
-                return;
-            }
-
-            if(data) setData(data);
-        }
-
-        getProjects();
-    }, []);
+  useEffect(() => {
+    const getProjects = async () => {
+      const { data, error } = await supabase.from('projects').select('*');
+      if (error) {
+        console.log(error.message);
+        return;
+      }
+      if (data) setData(data);
+    }
+    getProjects();
+  }, []);
 
   return (
     <>
@@ -59,5 +56,3 @@ function page({ len }) {
     </>
   )
 }
-
-export default page

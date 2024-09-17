@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Magnetic from '../../magnetic'
 import Link from 'next/link';
 import Projects from '../../projects'
@@ -6,21 +6,23 @@ import { supabase } from '@/config/supabase';
 
 function index() {
     const [data, setData] = useState([]);
-    useEffect(()=>{
-        const getProjects = async ()=>{
-            const {data, error} = await supabase.from('selected_projects').select('*');
-            if(error){
+    useEffect(() => {
+        const getProjects = async () => {
+            const { data, error } = await supabase.from('selected_projects').select('*').order('id');
+            if (error) {
                 console.log(error.message);
                 return;
             }
 
-            if(data){
+            if (data) {
                 setData(data);
             }
         }
 
         getProjects();
     }, []);
+
+    // await new Promise(resolve=>setTimeout(resolve, 3000));
 
     return (
         <section className='py-[100px] relative'>

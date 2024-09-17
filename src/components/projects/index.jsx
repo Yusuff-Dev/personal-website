@@ -30,14 +30,14 @@ function index({ data }) {
         <div ref={container}>
             {
                 data?.map((item, i) => {
-                    let targetScale = 1 - ((data.length - i) * 0.05);
+                    let targetScale = 1 - ((data.length - i) * 0.1);
                     return (
                         <Link key={`p_${i}`} href={`/works/${item.name}`}>
                             <Card i={i} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} src={item.img_url}>
                                 <div className='flex items-center justify-between flex-wrap'>
                                     <div className='flex items-center'>
                                         <Magnetic>
-                                            <button className='px-7 py-2 text-dark-grey uppercase text-5xl font-humane'>
+                                            <button className='px-7 py-2 text-white-smoke uppercase text-5xl font-humane'>
                                                 {`(0${i + 1} / 0${data.length})`}
                                             </button>
                                         </Magnetic>

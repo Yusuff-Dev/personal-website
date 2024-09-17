@@ -11,16 +11,16 @@
 
 @font-face {
   font-family: geist;
-  src: url('../../public/fonts/Geist/variable-ttf/GeistVF.ttf');
+  src: url("../../public/fonts/Geist/variable-ttf/GeistVF.ttf");
 }
 
 @font-face {
   font-family: humane;
-  src: url('../../public/fonts/HUMANE/Humane-VF.ttf');
+  src: url("../../public/fonts/HUMANE/Humane-VF.ttf");
 }
 
 html,
-body{
+body {
   background-color: var(--bg-black);
   font-family: geist, sans-serif;
   color: var(--grey);
@@ -54,6 +54,6 @@ body{
   top: 0;
 }
 
-.heading{
+.heading {
   font-size: clamp(10rem, 20vw, 15rem);
 }
